@@ -50,5 +50,6 @@ test:
 production:
   <<: *default
   database: tennis_match_make_production
-  username: tennis_match_make
-  password: <%= ENV['TENNIS_MATCH_MAKE_DATABASE_PASSWORD'] %>
+  username: root
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock

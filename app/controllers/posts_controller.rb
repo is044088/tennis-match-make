@@ -34,6 +34,7 @@ class PostsController < ApplicationController
       image: post_params[:image] 
     )
     redirect_to root_path
+    # flash[:success] = "テニスのイベントを作成しました"
   end
 
   def update

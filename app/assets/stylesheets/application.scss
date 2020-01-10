@@ -13,3 +13,8 @@
  *= require_tree .
  *= require_self
  */
+//  @import "font-awesome";
+ @import 'font-awesome.css';
+ @import "./ress.scss";
+ @import "post/index";
+ @import "post/new";

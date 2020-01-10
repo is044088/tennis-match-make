@@ -1,0 +1,33 @@
+*{
+  text-decoration: none;
+  list-style: none;
+}
+.clearfix:after{
+  content: "";
+  clear: both;
+  display: block;
+}
+.header{
+  background-color: #3cb371;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 10000;
+  &__image{
+    float: left;
+  }
+  &__inner{
+    &__image{
+      float: right;
+    }
+    li{
+      margin: 0 10px;
+      padding: 0 10px;
+      float: right;
+      height: 50px;
+      line-height: 50px;
+      background-color: yellow;
+      border-radius :20px;
+    }
+  }
+}

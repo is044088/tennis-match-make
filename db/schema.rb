@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_30_061815) do
+ActiveRecord::Schema.define(version: 2020_01_04_065120) do
 
   create_table "abilities", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id", null: false
@@ -55,14 +55,12 @@ ActiveRecord::Schema.define(version: 2019_12_30_061815) do
     t.date "date", null: false
     t.time "start_time", null: false
     t.time "end_time", null: false
-    t.date "deadline_date", null: false
-    t.time "deadline_time", null: false
     t.text "explanation", null: false
     t.integer "cost"
     t.integer "recruit", null: false
-    t.integer "average"
-    t.integer "total"
-    t.integer "communication"
+    t.integer "ave_low"
+    t.integer "ave_high"
+    t.integer "com_low"
     t.integer "age"
     t.string "sex"
     t.string "dominant"
@@ -70,6 +68,7 @@ ActiveRecord::Schema.define(version: 2019_12_30_061815) do
     t.string "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "com_high"
     t.index ["title"], name: "index_posts_on_title"
     t.index ["user_id"], name: "index_posts_on_user_id"
   end

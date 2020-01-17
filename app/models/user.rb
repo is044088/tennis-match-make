@@ -7,7 +7,9 @@ class User < ApplicationRecord
   has_many :rater_users,  foreign_key: "rater_id",  class_name: "reputation"
   has_many :target_users, foreign_key: "target_id", class_name: "reputation"
   has_one :ability
+  accepts_nested_attributes_for :ability
   has_many :posts
   has_many :likes
-  has_many :participants       
+  has_many :participants
+
 end

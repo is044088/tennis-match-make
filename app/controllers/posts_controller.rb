@@ -1,5 +1,9 @@
 class PostsController < ApplicationController
+  before_action :header_create
+
   def index
+   @new_tennis = Post.order(created_at: "desc").limit(3)
+   @tokyo_tennis =  Post.where(place: "東京都" ).order(created_at: "desc").limit(3)
    
   end
 
@@ -10,8 +14,12 @@ class PostsController < ApplicationController
   def edit
   end
 
+  def show
+    @post = Post.find(params[:id])
+  end
+
   def create
-    
+  
     Post.create(
       title: post_params[:title], 
       place: post_params[:place], 
@@ -33,7 +41,7 @@ class PostsController < ApplicationController
       user_id: post_params[:user_id],
       image: post_params[:image] 
     )
-    redirect_to root_path
+    redirect_to root_path, notice: "テニスのイベントを作成しました"
     # flash[:success] = "テニスのイベントを作成しました"
   end
 
@@ -67,4 +75,11 @@ class PostsController < ApplicationController
       :image
     )
   end
+
+  def header_create
+    if user_signed_in?
+      @ability = Ability.find_by(user_id:current_user.id)
+      @average = (@ability.serve + @ability.return + @ability.stroke + @ability.footwork + @ability.mental)/5.to_f
+    end
+  end  
 end

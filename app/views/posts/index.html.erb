@@ -11,62 +11,14 @@
       </p>
     </div>
   </div>
-  <%# <%= flash[:success] %> 
   <div class="new-tennis">
     <div class="new-tennis__container">
       <div class="new-tennis__container__heading">
         <h3>新着開催テニス</h3>
       </div>
-      <div class="new-tennis__container__contents">
-        <div class="new-tennis__container__contents__picture clearfix"> 
-          <img class = "new-tennis__container__contents__picture__image" src="http://placehold.jp/120x120.png"alt="image">
-        </div>
-        <div class="new-tennis__container__contents__date">
-          <span class="new-tennis__container__contents__column">開催日：</span>
-          <span>2020年1月3日　9:00〜12:00</span>
-        </div>
-        <div class="new-tennis__container__contents__deadline">
-        <span class="new-tennis__container__contents__column">申し込み締切：</span>
-          <span>2020年1月3日　9:00〜12:00</span>
-        </div>
-        <div class="new-tennis__container__contents__title">
-          <span class="new-tennis__container__contents__column">タイトル：</span>
-          <span>HIKI OPEN” ジャックマジシャン”と試合に出よう！</span>
-        </div>
-        <div class="new-tennis__container__contents__fee">
-          <span class="new-tennis__container__contents__column">金額：</span>
-          <span>1000円</span>
-        </div>
-        <div class="new-tennis__container__contents__conditions">
-          <span class="new-tennis__container__contents__column">参加条件：</span>
-          <span>平均点8点以上</span>
-        </div>
-      </div>
-      <div class="new-tennis__container__contents">
-        <div class="new-tennis__container__contents__picture clearfix"> 
-          <img class = "new-tennis__container__contents__picture__image" src="http://placehold.jp/120x120.png"alt="image">
-        </div>
-        <div class="new-tennis__container__contents__date">
-          <span class="new-tennis__container__contents__column">開催日：</span>
-          <span>2020年1月3日　9:00〜12:00</span>
-        </div>
-        <div class="new-tennis__container__contents__deadline">
-        <span class="new-tennis__container__contents__column">申し込み締切：</span>
-          <span>2020年1月3日　9:00〜12:00</span>
-        </div>
-        <div class="new-tennis__container__contents__title">
-          <span class="new-tennis__container__contents__column">タイトル：</span>
-          <span>HIKI OPEN” ジャックマジシャン”と試合に出よう！</span>
-        </div>
-        <div class="new-tennis__container__contents__fee">
-          <span class="new-tennis__container__contents__column">金額：</span>
-          <span>1000円</span>
-        </div>
-        <div class="new-tennis__container__contents__conditions">
-          <span class="new-tennis__container__contents__column">参加条件：</span>
-          <span>平均点8点以上</span>
-        </div>
-      </div>
+      <% @new_tennis.each do |post| %> 
+        <%= render 'post_box', post: post %> 
+      <% end %>    
     </div>
   </div>
   <div class="local-tennis">
@@ -74,56 +26,9 @@
       <div class="local-tennis__container__heading">
         <h3>東京開催テニス</h3>
       </div>
-      <div class="local-tennis__container__contents">
-        <div class="local-tennis__container__contents__picture clearfix"> 
-          <img class = "local-tennis__container__contents__picture__image" src="http://placehold.jp/120x120.png"alt="image">
-        </div>
-        <div class="local-tennis__container__contents__date">
-          <span class="local-tennis__container__contents__column">開催日：</span>
-          <span>2020年1月3日　9:00〜12:00</span>
-        </div>
-        <div class="local-tennis__container__contents__deadline">
-          <span class="local-tennis__container__contents__column">申し込み締切：</span>
-          <span>2020年1月3日　9:00〜12:00</span>
-        </div>
-        <div class="local-tennis__container__contents__title">
-          <span class="local-tennis__container__contents__column">タイトル：</span>
-          <span>【HIKI OPEN】” ジャックマジシャン”と試合に出よう！</span>
-        </div>
-        <div class="local-tennis__container__contents__fee">
-          <span class="local-tennis__container__contents__column">金額：</span>
-          <span>1000円</span>
-        </div>
-        <div class="local-tennis__container__contents__conditions">
-          <span class="local-tennis__container__contents__column">参加条件：</span>
-          <span>平均点8点以上</span>
-        </div>
-      </div>
-      <div class="local-tennis__container__contents">
-        <div class="local-tennis__container__contents__picture clearfix"> 
-          <img class = "local-tennis__container__contents__picture__image" src="http://placehold.jp/120x120.png"alt="image">
-        </div>
-        <div class="local-tennis__container__contents__date">
-          <span class="local-tennis__container__contents__column">開催日：</span>
-          <span>2020年1月3日　9:00〜12:00</span>
-        </div>
-        <div class="local-tennis__container__contents__deadline">
-          <span class="local-tennis__container__contents__column">申し込み締切：</span>
-          <span>2020年1月3日　9:00〜12:00</span>
-        </div>
-        <div class="local-tennis__container__contents__title">
-          <span class="local-tennis__container__contents__column">タイトル：</span>
-          <span>【HIKI OPEN】” ジャックマジシャン”と試合に出よう！</span>
-        </div>
-        <div class="local-tennis__container__contents__fee">
-          <span class="local-tennis__container__contents__column">金額：</span>
-          <span>1000円</span>
-        </div>
-        <div class="local-tennis__container__contents__conditions">
-          <span class="local-tennis__container__contents__column">参加条件：</span>
-          <span>平均点8点以上</span>
-        </div>
-      </div>
+      <% @tokyo_tennis.each do |post| %> 
+        <%= render 'post_box', post: post %> 
+      <% end %>
     </div>
   </div>
 

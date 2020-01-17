@@ -1,0 +1,149 @@
+.s-content{
+  background-color: #fff;
+  width: 1200px;
+  padding-top: 60px;
+  margin: 0 auto;
+  
+  &__bar{
+    // display: block;
+    width: 980px;
+    margin: auto;    
+    &__place{
+      display: inline-block;
+      font-family: ten-mincho,serif;
+      font-size: 1.5rem;
+      color: #fff;
+      background: #f8bdb5;
+      width: 120px;
+      padding: 5px 0;
+      border-radius: 5px;
+      margin: 0 15px 0 0;
+      text-align: center;
+    }
+    &__date{
+      font-size: 1.5rem;
+      font-weight: 600;
+      font-family: ten-mincho,serif;
+      color: #3d1508;
+      &__recruit{
+        float:right;
+      }
+    }
+  }
+  &__main {
+    display: block;
+    width: 980px;
+    margin: auto;
+    &__title{
+      font-family: ten-mincho,serif;
+      font-size: 25px;
+      font-weight: 600;
+      color: #3d1508;
+      margin: 10px 0;
+      text-align: left;
+    }
+    &__pic-jouken{
+      display: flex;
+      justify-content: space-around;
+      border-bottom: double 4px gray;
+      padding-bottom: 30px;
+      margin-bottom: 20px;
+
+      &__picture{
+        &__image{
+          border-radius: 20px;
+        }
+      }
+      &__contents{
+        &__title{
+          display: block;
+          text-align: center;
+          padding: 10px 30px;
+          margin-bottom: 20px;
+          border-radius: 10px 10px;
+          background-color: #f8bdb5;
+          color: #fff;
+        }
+        &__column{
+          padding: 10px;
+          background-color: antiquewhite;
+        }
+        td{
+          text-align: center;
+        }
+        &__place{
+          margin-top: 20px;
+          &__mark{
+            display: block;
+            text-align: center;
+            width: 62px;
+            height: 64px;
+            line-height:64px;
+            line-height: 60px;
+            border-radius: 50%;
+            // background: skyblue;
+            color : skyblue;
+            float:left;
+          }
+          &__name{
+            font-family: ten-mincho,serif;
+            font-size: 20px;
+            font-weight: 600;
+            color: #3d1508;
+            float:left;
+            margin-left: 20px;
+          }
+        }
+        &__host{
+          margin-top: 20px;
+          &__mark{
+            display: block;
+            text-align: center;
+            width: 60px;
+            height: 60px;
+            line-height: 60px;
+            border-radius: 50%;
+            // background: skyblue;
+            color : skyblue;
+            float:left;
+          }
+          &__name{
+            font-family: ten-mincho,serif;
+            font-size: 20px;
+            font-weight: 600;
+            color: #3d1508;
+            float:left;
+            margin-left: 20px;
+          }
+        }
+      }
+    }
+    &__explanation{
+      font-family: ten-mincho,serif;
+      font-size: 15px;
+      font-weight: 600;
+      color: #3d1508;
+    }
+    &__button{
+      text-align: center;
+      margin-top: 30px;
+      &__btn-square{
+          display: inline-block;
+          padding: 1em 10em;
+          text-decoration: none;
+          background: #f8bdb5;/*ボタン色*/
+          color: #FFF;
+          // border-bottom: solid 4px #627295;
+          border-radius: 3px;
+        }
+        :active {
+          /*ボタンを押したとき*/
+          -webkit-transform: translateY(4px);
+          transform: translateY(4px);/*下に動く*/
+          border-bottom: none;/*線を消す*/
+        }
+    }
+  }
+}  
+  
+  

@@ -16,6 +16,14 @@
   &__image{
     float: left;
   }
+  &__sentence{
+    float: left;
+    height: 50px;
+    line-height: 50px;
+    margin-left: 5px;
+    font-family: ten-mincho,serif;
+    color: white;
+  }
   &__inner{
     &__image{
       float: right;

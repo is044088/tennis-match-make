@@ -71,7 +71,7 @@ gem 'devise'
 gem 'pry-rails'
 gem "font-awesome-rails"
 gem "font-awesome-sass"
-
+gem 'acts-as-taggable-on'
 
 group :production do
   gem 'unicorn', '5.4.1'

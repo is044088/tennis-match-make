@@ -1,0 +1,118 @@
+<%= render partial: 'header' %>
+<div class = "wrapper">
+  <div class = "s-content">
+    <div class = "s-content__bar clearfix">
+      <span class = "s-content__bar__place"> <%= @post.place %></span>
+      <span class = "s-content__bar__date"> <%= @post.date.strftime("%-Y年%-m月%-d日(%a)") %></span>
+      <span class = "s-content__bar__date"> <%= @post.start_time.strftime("%-H:%M") %> ~ </span>
+      <span class = "s-content__bar__date"> <%= @post.end_time.strftime("%-H:%M") %></span>
+      <span class = "s-content__bar__date s-content__bar__date__recruit"> 募集人数:<%= @post.recruit %>人</span>
+    </div>
+    <div class = "s-content__main">      
+      <p class = "s-content__main__title"><span> <%= @post.title %> </span></p>
+      <div class = "s-content__main__pic-jouken">
+        <div class = "s-content__main__pic-jouken__picture">
+          <%= image_tag @post.image, width:"300", height:"300", alt:"image", class: "s-content__main__picture__image"%>
+        </div>
+        <div class = "s-content__main__pic-jouken__contents">
+          <p class = "s-content__main__pic-jouken__contents__title">★参加条件★</p>
+          <table border="3" cellpadding="6" cellspacing="0">
+            <tr>
+              <th class = "s-content__main__pic-jouken__contents__column">参加費</th>
+              <th class = "s-content__main__pic-jouken__contents__column">スキル(平均)</th>
+              <th class = "s-content__main__pic-jouken__contents__column">コミュ力</th>
+              <th class = "s-content__main__pic-jouken__contents__column">年齢制限</th>
+              <th class = "s-content__main__pic-jouken__contents__column">利き腕制限</th>
+              <th class = "s-content__main__pic-jouken__contents__column">性別制限</th>
+            </tr>
+            <tr>
+              <td>
+                <% if @post.cost.blank? %>
+                  <span>なし</span>
+                <% else %>
+                  <%= @post.cost %>
+                <% end %>
+              </td>
+              <td>
+                <% if @post.ave_low.blank? && @post.ave_high.blank?%>
+                  <span>問わない</span>
+                <% else %>
+                  <span><%= @post.ave_low %> ~ <%= @post.ave_high %></span>
+                <% end %>
+              </td>
+              <td>
+                <% if @post.com_low.blank? && @post.com_high.blank?%>
+                  <span>問わない</span>
+                <% else %>
+                  <span><%= @post.com_low %> ~ <%= @post.com_high %></span>
+                <% end %>
+              </td>
+              <td>
+                <% if @post.age.blank? %>
+                  <span>問わない</span>
+                <% else %>
+                  <span><%= @post.age %>代限定</span>
+                <% end %>
+              </td>
+              <td>
+                <% if @post.dominant.blank? %>
+                  <span>問わない</span>
+                <% else %>
+                  <span><%= @post.dominant %>のみ</span>
+                <% end %>
+              </td>
+              <td>
+                <% if @post.sex.blank? %>
+                  <span>問わない</span>
+                <% else %>
+                  <span><%= @post.sex %>のみ</span>
+                <% end %>
+              </td>
+            </tr>
+          </table>
+          <div class = "s-content__main__pic-jouken__contents__place clearfix">
+            <%= link_to "https://www.google.co.jp/maps/search/#{@post.address}#{@post.venue}" do %>
+              <div class = "s-content__main__pic-jouken__contents__place__mark">
+                <i class="fas fa-map-marker-alt fa-3x"></i>
+              </div>
+              <div class = "s-content__main__pic-jouken__contents__place__name">
+                <span> <%= @post.address %></br><%= @post.venue %></span>
+              </div>
+            <% end %>  
+          </div>
+          <div class = "s-content__main__pic-jouken__contents__host clearfix">
+            <%= link_to "/" do %>
+              <div class = "s-content__main__pic-jouken__contents__host__mark">
+                <i class="fas fa-user fa-3x"></i>
+              </div>
+              <div class = "s-content__main__pic-jouken__contents__host__name">    
+                  ニックネーム：<%= @post.user.nickname %><br>
+                  投稿日時:<%= @post.created_at.strftime("%Y/%m/%d %H:%M") %>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>      
+      <div class = "s-content__main__explanation">
+        <%= @post.explanation %>
+      </div>
+      <div class = "s-content__main__button">
+        <% if user_signed_in? %> 
+          <%# <% if @average. %>         
+          <%= link_to '参加する', "#", class: "s-content__main__button__btn-square", method: :get %>
+       
+       
+        <% else %>
+          <p class = "s-content__main__button__btn-square">
+            会員登録してください
+          </p>
+
+        <% end %>
+
+
+      </div>
+
+
+    </div>
+  </div>
+</div>

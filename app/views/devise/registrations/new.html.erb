@@ -4,22 +4,78 @@
   <%= render "devise/shared/error_messages", resource: resource %>
 
   <div class="field">
-    <%= f.label :email %><br />
+    <%= f.label :email,"メールアドレス" %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
 
   <div class="field">
-    <%= f.label :password %>
+    <%= f.label :password, "パスワード" %>
     <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <em>(<%= @minimum_password_length %> 文字以上入力してください)</em>
     <% end %><br />
     <%= f.password_field :password, autocomplete: "new-password" %>
   </div>
 
   <div class="field">
-    <%= f.label :password_confirmation %><br />
+    <%= f.label :password_confirmation, "パスワード ※再入力" %><br />
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
   </div>
+  
+  <div class="field">
+    <div class="label"><%= f.label :nickname, "ニックネーム" %><br />
+    <%= f.text_field :nickname %></div>
+  </div>
+
+  <div class="field">
+    <div class="label"><%= f.label :sex, "性別" %><br />
+    <%= f.select :sex, [["男性","男性"],["女性","女性"]], prompt: "--" %></div>
+  </div>
+
+  <div class="field">
+    <div class="label"><%= f.label :age, "年齢" %><br />
+    <%= f.select :age, [["20代",20],["30代",30],["30代",30],["40代",40],["50代",50]], prompt: "--" %></div>
+  </div>
+
+  <div class="field">
+    <div class="label"><%= f.label :address, "居住地" %><br />
+    <%= f.select :address, ["北海道", "青森県", "岩手県", "宮城県", "秋田県", "山形県", "福島県", "茨城県", "栃木県", "群馬県", "埼玉県", "千葉県", "東京都", "神奈川県", "新潟県", "富山県", "石川県", "福井県", "山梨県","長野県", "岐阜県", "静岡県", "愛知県", "三重県", "滋賀県", "京都府", "大阪府", "兵庫県", "奈良県", "和歌山県", "鳥取県", "島根県", "岡山県", "広島県", "山口県", "徳島県", "香川県", "愛媛県", "高知県", "福岡県", "佐賀県", "長崎県", "熊本県", "大分県", "宮崎県", "鹿児島県", "沖縄県"], prompt: "--" %></div>
+  </div>
+
+  <%= f.fields_for :ability do |i| %>
+    <div class="form-group">
+      <%= i.label :experience, "テニス歴" %><br />
+      <%= i.select :experience, [["0〜1年",1],["2〜3年",3],["4〜5年",5],["6〜7年",7],["8年以上",8]], prompt: "--" %>
+      <br>
+
+      <%= i.label :dominant, "利き腕" %><br />
+      <%= i.select :dominant, [["右利き","右"],["左利き","左"]], prompt: "--" %>
+      <br>
+
+      <%= i.label :serve, "サービス力" %><br />
+      <%= i.select :serve, [1,2,3,4,5,6,7,8,9,10], prompt: "--" %>
+      <br>
+
+      <%= i.label :return, "リターン力" %><br />
+      <%= i.select :return, [1,2,3,4,5,6,7,8,9,10], prompt: "--" %>
+      <br>
+
+      <%= i.label :stroke, "ストローク力" %><br />
+      <%= i.select :stroke, [1,2,3,4,5,6,7,8,9,10], prompt: "--" %>
+      <br>
+
+      <%= i.label :footwork, "フットワーク力" %><br />
+      <%= i.select :footwork, [1,2,3,4,5,6,7,8,9,10], prompt: "--" %>
+      <br>
+      
+      <%= i.label :mental, "メンタル面" %><br />
+      <%= i.select :mental, [1,2,3,4,5,6,7,8,9,10], prompt: "--" %>
+      <br>
+
+      <%= i.label :communication, "コミュニケーション面" %><br />
+      <%= i.select :communication, [1,2,3,4,5,6,7,8,9,10], prompt: "--" %>
+      <br>
+    </div>
+  <% end %>
 
   <div class="actions">
     <%= f.submit "Sign up" %>

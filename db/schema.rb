@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_04_065120) do
+ActiveRecord::Schema.define(version: 2020_01_12_101047) do
 
   create_table "abilities", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id", null: false
@@ -21,8 +21,6 @@ ActiveRecord::Schema.define(version: 2020_01_04_065120) do
     t.integer "stroke", null: false
     t.integer "footwork", null: false
     t.integer "mental", null: false
-    t.integer "average", null: false
-    t.integer "total", null: false
     t.integer "communication", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -61,6 +59,7 @@ ActiveRecord::Schema.define(version: 2020_01_04_065120) do
     t.integer "ave_low"
     t.integer "ave_high"
     t.integer "com_low"
+    t.integer "com_high"
     t.integer "age"
     t.string "sex"
     t.string "dominant"
@@ -68,18 +67,8 @@ ActiveRecord::Schema.define(version: 2020_01_04_065120) do
     t.string "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "com_high"
     t.index ["title"], name: "index_posts_on_title"
     t.index ["user_id"], name: "index_posts_on_user_id"
-  end
-
-  create_table "posts_tags", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "user_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.bigint "tag_id", null: false
-    t.index ["tag_id"], name: "index_posts_tags_on_tag_id"
-    t.index ["user_id"], name: "index_posts_tags_on_user_id"
   end
 
   create_table "reputations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -93,20 +82,38 @@ ActiveRecord::Schema.define(version: 2020_01_04_065120) do
     t.index ["target_id"], name: "index_reputations_on_target_id"
   end
 
-  create_table "tags", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table "taggings", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "tag_id"
+    t.string "taggable_type"
+    t.integer "taggable_id"
+    t.string "tagger_type"
+    t.integer "tagger_id"
+    t.string "context", limit: 128
+    t.datetime "created_at"
+    t.index ["context"], name: "index_taggings_on_context"
+    t.index ["tag_id", "taggable_id", "taggable_type", "context", "tagger_id", "tagger_type"], name: "taggings_idx", unique: true
+    t.index ["tag_id"], name: "index_taggings_on_tag_id"
+    t.index ["taggable_id", "taggable_type", "context"], name: "taggings_taggable_context_idx"
+    t.index ["taggable_id", "taggable_type", "tagger_id", "context"], name: "taggings_idy"
+    t.index ["taggable_id"], name: "index_taggings_on_taggable_id"
+    t.index ["taggable_type"], name: "index_taggings_on_taggable_type"
+    t.index ["tagger_id", "tagger_type"], name: "index_taggings_on_tagger_id_and_tagger_type"
+    t.index ["tagger_id"], name: "index_taggings_on_tagger_id"
+  end
+
+  create_table "tags", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name", collation: "utf8_bin"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer "taggings_count", default: 0
+    t.index ["name"], name: "index_tags_on_name", unique: true
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "nickname", null: false
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
-    t.string "image_url", null: false
     t.text "profile"
-    t.string "family_name", null: false
-    t.string "first_name", null: false
     t.string "sex", null: false
     t.integer "age", null: false
     t.string "address", null: false
@@ -125,8 +132,7 @@ ActiveRecord::Schema.define(version: 2020_01_04_065120) do
   add_foreign_key "participants", "posts"
   add_foreign_key "participants", "users"
   add_foreign_key "posts", "users"
-  add_foreign_key "posts_tags", "tags"
-  add_foreign_key "posts_tags", "users"
   add_foreign_key "reputations", "users", column: "rater_id"
   add_foreign_key "reputations", "users", column: "target_id"
+  add_foreign_key "taggings", "tags"
 end

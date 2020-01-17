@@ -69,8 +69,13 @@
     <div> 
       <%= f.select :dominant, [["指定なし",""],["右利き限定","右利き"],["左利き限定","左利き"]] %>
     </div>
+    <%# <%= f.collection_check_boxes :tag_ids, Tag.all, :id, :name %> 
 
-    <%= f.hidden_field :image, value: "http://placehold.jp/120x120.png" %>
+    <%= f.label :image, "イメージ画像" %><span class="">必須</span>
+    <div>
+      <%= f.select :image, [["テニスの練習","https://d1f5hsy4d47upe.cloudfront.net/a0/a048ed7dabbbe4ed073e882f542f70fc_w.jpg"],["クレーコート","https://d1f5hsy4d47upe.cloudfront.net/f5/f5c61a9bfc8f5e4ae05b11e3fadd906d_w.jpg"],["テニスの試合","https://d1f5hsy4d47upe.cloudfront.net/b2/b2515848e899f0af65d6216a9eee6850_w.jpg"]] %>
+    </div>
+    
     <%= f.hidden_field :user_id, value: 1 %> <%# current_user.id %>
     <%= f.submit "送信" %>
   <% end %>

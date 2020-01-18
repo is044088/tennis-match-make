@@ -1,27 +1,29 @@
           <%= link_to "/posts/#{post.id}" do %>
             <div class="new-tennis__container__contents clearfix">
-              <div class="new-tennis__container__contents__picture"> 
-                <%= image_tag post.image, width:"120", height:"120", alt:"image", class: "new-tennis__container__contents__picture__image"%>
-              </div>
-              <div class="new-tennis__container__contents__detail clearfix">
-                <div class="new-tennis__container__contents__detail__column">
-                  <div class="new-tennis__container__contents__detail__title">タイトル：</div>
-                  <div class="new-tennis__container__contents__detail__date">開催日時：</div>
-                  <div class="new-tennis__container__contents__detail__place">場所：</div>
-                  <div class="new-tennis__container__contents__detail__condition">参加条件：</div>
+              <div class="new-tennis__container__contents__box">
+                <div class="new-tennis__container__contents__picture"> 
+                  <%= image_tag post.image, width:"120", height:"120", alt:"image", class: "new-tennis__container__contents__picture__image"%>
                 </div>
-                <div class="new-tennis__container__contents__detail__value">
-                  <div class="new-tennis__container__contents__detail__value__title">
-                    <span><%= post.title %></span>
+                <div class="new-tennis__container__contents__detail">
+                  <div class="new-tennis__container__contents__detail__column">
+                    <div class="new-tennis__container__contents__detail__title">タイトル：</div>
+                    <div class="new-tennis__container__contents__detail__date">開催日時：</div>
+                    <div class="new-tennis__container__contents__detail__place">場所：</div>
+                    <div class="new-tennis__container__contents__detail__condition">参加条件：</div>
                   </div>
-                  <div class="new-tennis__container__contents__detail__value__date">
-                    <span><%= post.date.strftime("%Y年%m月%d日(%a)") %> <%= post.start_time.strftime("%-H:%M") %> ~ <%= post.end_time.strftime("%-H:%M") %></span>
-                  </div>  
-                  <div class="new-tennis__container__contents__detail__value__place">
-                    <span><%= post.address %>    <%= post.venue %></span>
+                  <div class="new-tennis__container__contents__detail__value">
+                    <div class="new-tennis__container__contents__detail__value__title">
+                      <span><%= post.title %></span>
+                    </div>
+                    <div class="new-tennis__container__contents__detail__value__date">
+                      <span><%= post.date.strftime("%Y年%m月%d日(%a)") %> <%= post.start_time.strftime("%-H:%M") %> ~ <%= post.end_time.strftime("%-H:%M") %></span>
+                    </div>  
+                    <div class="new-tennis__container__contents__detail__value__place">
+                      <span><%= post.address %>    <%= post.venue %></span>
+                    </div>
                   </div>
                 </div>
-              </div>
+              </div>  
               <div class="new-tennis__container__contents__jouken">
                 <div class="new-tennis__container__contents__jouken__table">
                   <table border="1" cellpadding="6" cellspacing="0">

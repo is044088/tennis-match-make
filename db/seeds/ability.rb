@@ -3,7 +3,7 @@ Ability.create!(
     {
       user_id: 1,
       experience: 1,
-      dominant: "右",
+      dominant: "右利き",
       serve: 1,
       return: 2,
       stroke: 2,
@@ -14,7 +14,7 @@ Ability.create!(
     {
       user_id: 2,
       experience: 8,
-      dominant: "左",
+      dominant: "左利き",
       serve: 8,
       return: 6,
       stroke: 9,
@@ -25,7 +25,7 @@ Ability.create!(
     {
       user_id: 3,
       experience: 5,
-      dominant: "右",
+      dominant: "右利き",
       serve: 5,
       return: 6,
       stroke: 7,

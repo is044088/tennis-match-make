@@ -98,10 +98,37 @@
       </div>
       <div class = "s-content__main__button">
         <% if user_signed_in? %> 
-          <%# <% if @average. %>         
-          <%= link_to '参加する', "#", class: "s-content__main__button__btn-square", method: :get %>
-       
-       
+          <% if @average >= @post.ave_low && @average <= @post.ave_high %>
+            <% if current_user.ability.communication >= @post.com_low && current_user.ability.communication <= @post.com_high %>
+              <% if current_user.age == @post.age || @post.age.blank? %>
+                <% if current_user.ability.dominant == @post.dominant || @post.dominant.blank? %>
+                  <% if current_user.sex == @post.sex || @post.sex.blank? %>
+                    <%= link_to 'おめでとうございます！すべての制限をクリアしているので参加可能です', "#", class: "s-content__main__button__btn-square", method: :get %>
+                  <% else %>
+                    <p class = "s-content__main__button__btn-square">
+                      性別制限の範囲外なので応募不可です
+                    </p>
+                  <% end %>
+                <% else %>
+                  <p class = "s-content__main__button__btn-square">
+                    利き腕制限の範囲外なので応募不可です
+                  </p>
+                <% end %>
+              <% else    %>
+                <p class = "s-content__main__button__btn-square">
+                  募集年齢の範囲外なので応募不可です
+                </p>    
+              <% end %>
+            <% else    %>
+              <p class = "s-content__main__button__btn-square">
+                募集コミュ力の範囲なので応募不可です
+              </p>  
+            <% end %>
+          <% else %>
+            <p class = "s-content__main__button__btn-square">   
+              募集スキルの範囲外なので応募不可です
+            </p>  
+          <% end %>
         <% else %>
           <p class = "s-content__main__button__btn-square">
             会員登録してください

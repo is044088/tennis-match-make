@@ -1,0 +1,101 @@
+.n-contents{
+  background-color: #fff;
+  width: 1200px;
+  padding-top: 60px;
+  margin: 0 auto;
+
+  &__container{
+    width: 1000px;
+    margin: 0 auto;
+
+    &__heading{
+      display: flex;
+      margin-bottom: 10px;
+
+      h3{
+        font-size: 24px;
+        font-family: Arial, Helvetica, sans-serif;
+        // font-weight: 600;
+        // flex-grow: 4; 
+        color: white;
+        background-color: #3cb371;
+        border-radius: 10px;
+        // width: 100px;
+        padding: 2px 10px;
+      }
+    }
+    
+    &__box{
+      font-family: 'arial unicode ms';
+
+      &__label{
+        // color: #666666;
+        margin-right: 5px;
+      }
+
+      &__span{
+        display: inline-block;
+        font-size: 12px;
+        color: white;
+        background-color: red;
+        padding: 1px 2px;
+        border-radius: 5px;
+      }
+      &__value{
+        border: 1px solid;
+        border-color: rgb(204, 204, 204);
+        // background-color: black;
+        padding: 5px;
+        margin: 5px 0px 10px;
+
+        &__place{
+          width: 300px;
+        }
+        &__venue{
+          width: 300px;
+        }
+        &__date{
+          width: 200px;
+        }
+        &__explanation{
+          width: 1000px;
+        }
+        &__cost{
+          width: 100px;
+        }
+        &__recruit{
+          width: 100px;
+        }
+        &__ave_low{
+          width: 100px;
+        }
+        &__ave_high{
+          width: 100px;
+        }
+        &__com_low{
+          width: 100px;
+        }
+        &__com_high{
+          width: 100px;
+        }
+        &__age{
+          width: 100px;
+        }
+        &__sex{
+          width: 100px;
+        }
+        &__dominant{
+          width: 100px;
+        }
+        &__image{
+          width: 150px;
+        }
+      }
+      &__send{
+        background-color: yellow;
+        padding: 5px 10px;
+        border-radius: 10px;
+      }
+    }  
+  }
+}

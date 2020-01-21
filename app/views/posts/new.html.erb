@@ -29,7 +29,7 @@
 
               <%= f.label :date, "開催日付", {class: "n-contents__container__box__label"} %><span class="n-contents__container__box__span">必須</span>
               <div class = "n-contents__container__box__value n-contents__container__box__value__date">
-                <%= f.date_select :date, default: { year: 2020, month: 6, day: 1 } %>
+                <%= f.date_select :date, long: { year: 2020, month: 2, day: 1 } %>
               </div>
 
               <%= f.label :start_time, "開始時刻", {class: "n-contents__container__box__label"} %><span class="n-contents__container__box__span">必須</span>

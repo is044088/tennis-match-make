@@ -72,6 +72,9 @@ gem 'pry-rails'
 gem "font-awesome-rails"
 gem "font-awesome-sass"
 gem 'acts-as-taggable-on'
+gem "chartkick"
+gem 'chartable'
+gem 'gon'
 
 group :production do
   gem 'unicorn', '5.4.1'

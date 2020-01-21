@@ -2,9 +2,16 @@ class PostsController < ApplicationController
   before_action :header_create
 
   def index
-   @new_tennis = Post.order(created_at: "desc").limit(3)
-   @tokyo_tennis =  Post.where(place: "東京都" ).order(created_at: "desc").limit(3)
-   
+    @new_tennis = Post.order(created_at: "desc").limit(3)
+    @tokyo_tennis =  Post.where(place: "東京都" ).order(created_at: "desc").limit(3)
+  #  @data = [['テニス歴',5], ['2019-06-02', 1], ['2019-06-03', 150]]
+    gon.current_user_serve = current_user.ability.serve
+    gon.current_user_return = current_user.ability.return
+    gon.current_user_stroke = current_user.ability.stroke
+    gon.current_user_footwork = current_user.ability.footwork
+    gon.current_user_mental = current_user.ability.mental
+    gon.current_user_communication = current_user.ability.communication
+    gon.current_user_nickname = current_user.nickname
   end
 
   def new

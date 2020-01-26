@@ -10,8 +10,6 @@
 .description{
   padding: 0 100px 50px;
   text-align: center;
-  // &__image{
-  // }
   &__text{
     text-align:  center;    /* 文字中央寄せ */
     padding:  10px;        /* 余白指定 */
@@ -23,7 +21,6 @@
   background-color:#F5F5F5;
   &__container{
     width: 1020px;
-    // height: 650px;
     margin: 0 auto;
     padding: 40px 0 10px;
   
@@ -48,17 +45,23 @@
       margin-bottom: 20px;
       box-shadow: 5px 5px 5px rgba(0,0,0,0.6);
       color: black;
-    
+      &__button{
+        padding-top: -10px;
+        height: 15px;
+        &__change{
+          display:inline-block;
+        }
+        &__delete{
+          display:inline-block;
+        }
+      }
       &__box{
         display: flex;
       }
-       
       &__picture{
-        // float: left; 
         padding-right:10px;
       }
       &__detail{
-        // float: right;
         display: flex;
         &__column{
           display:inline-block;

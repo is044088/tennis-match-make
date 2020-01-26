@@ -1,0 +1,65 @@
+<%= render partial: './posts/header' %>
+<div class = "wrapper">
+  <div class = "user-show">
+     <h1 class = "user-show__title"><%= current_user.nickname %>さんの個人情報</h1>  
+    <div class = "user-show__contents">
+      <div class = "user-show__contents__column">
+        <div class = "user-show__contents__column__experience">テニス歴：</div>
+        <div class = "user-show__contents__column__sex">性別：</div>
+        <div class = "user-show__contents__column__age">年齢：</div>
+        <div class = "user-show__contents__column__place">居住地：</div>
+        <div class = "user-show__contents__column__dominant">利き腕：</div>
+        <div class = "user-show__contents__column__average">スキル(平均値)：</div>
+      </div>
+      <div class = "user-show__contents__value">
+        <div class = "user-show__contents__value__experience">約<%= @ability.experience %>年</div>
+        <div class = "user-show__contents__value__sex"><%= current_user.sex %></div>
+        <div class = "user-show__contents__value__age"><%= current_user.age %>代</div>
+        <div class = "user-show__contents__value__place"><%= current_user.address %></div>
+        <div class = "user-show__contents__value__dominant"><%= @ability.dominant %>利き</div>
+        <div class = "user-show__contents__value__average"><%= @average %></div>
+      </div>
+    </div>
+    <canvas id="myRaderChart"></canvas>
+    <script>
+      var ctx = document.getElementById("myRaderChart");
+      var c_u_serve = gon.current_user_serve;
+      var myRadarChart = new Chart(ctx, {
+          type: 'radar', 
+          data: { 
+              labels: ["サービス", "リターン", "ストローク", "フットワーク", "メンタル","コミュ力"],
+              datasets: [{
+                  label: "スキルセット",
+                  data: [ gon.current_user_serve,
+                          gon.current_user_return,
+                          gon.current_user_stroke,
+                          gon.current_user_footwork,
+                          gon.current_user_mental,
+                          gon.current_user_communication
+                          ],
+                  backgroundColor: 'RGBA(225,95,150, 0.5)',
+                  borderColor: 'RGBA(225,95,150, 1)',
+                  borderWidth: 1,
+                  pointBackgroundColor: 'RGB(46,106,177)'
+              }]
+          },
+          options: {
+              title: {
+                  // display: true,
+                  // text: '試験成績'
+              },
+              scale:{
+                  ticks:{
+                      suggestedMin: 0,
+                      suggestedMax: 10,
+                      stepSize: 1,
+                      callback: function(value, index, values){
+                          return  value 
+                      }
+                  }
+              }
+          }
+      });
+    </script>
+  </div>
+</div>

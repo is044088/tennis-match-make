@@ -1,0 +1,108 @@
+<%= render partial: 'header' %>
+<div class = "wrapper">
+  <div class = "n-contents">
+    <div class = "n-contents__container">
+      <div class = "n-contents__container__heading">
+        <h3>基本情報</h3>
+      </div>  
+          <%= form_for(@post) do |f| %>
+            <div class = "n-contents__container__box">
+              <%= f.label :title, "開催テニス名",{class: "n-contents__container__box__label"} %><span class="n-contents__container__box__span">必須</span>
+              <div>
+                <%= f.text_field :title, class: "n-contents__container__box__value", value: "", placeholder: "開催テニス名（必須 40文字まで)", maxlength: "40" %>
+              </div>
+
+              <%= f.label :place, "開催地",{class: "n-contents__container__box__label"} %><span class="n-contents__container__box__span">必須</span>
+              <div class = "n-contents__container__box__value n-contents__container__box__value__place"> 
+                <%= f.select :place, ["北海道", "青森県", "岩手県", "宮城県", "秋田県", "山形県", "福島県", "茨城県", "栃木県", "群馬県", "埼玉県", "千葉県", "東京都", "神奈川県", "新潟県", "富山県", "石川県", "福井県", "山梨県","長野県", "岐阜県", "静岡県", "愛知県", "三重県", "滋賀県", "京都府", "大阪府", "兵庫県", "奈良県", "和歌山県", "鳥取県", "島根県", "岡山県", "広島県", "山口県", "徳島県", "香川県", "愛媛県", "高知県", "福岡県", "佐賀県", "長崎県", "熊本県", "大分県", "宮崎県", "鹿児島県", "沖縄県"], prompt: "都道府県を選択してください" %>
+              </div>
+
+              <%= f.label :venue, "テニス会場名",{class: "n-contents__container__box__label"} %><span class="n-contents__container__box__span">必須</span>
+              <div>
+                <%= f.text_field :venue, class: "n-contents__container__box__value n-contents__container__box__value__venue", value: "", placeholder: "テニス会場名（必須 20文字まで)", maxlength: "20" %>
+              </div>
+
+              <%= f.label :address, "住所", {class: "n-contents__container__box__label"} %><span class="n-contents__container__box__span">必須</span>
+              <div>
+                <%= f.text_field :address, class: "n-contents__container__box__value", value: "", placeholder: "住所（必須 40文字まで)", maxlength: "40" %>
+              </div>
+
+              <%= f.label :date, "開催日付", {class: "n-contents__container__box__label"} %><span class="n-contents__container__box__span">必須</span>
+              <div class = "n-contents__container__box__value n-contents__container__box__value__date">
+                <%= f.date_select :date, long: { year: 2020, month: 2, day: 1 } %>
+              </div>
+
+              <%= f.label :start_time, "開始時刻", {class: "n-contents__container__box__label"} %><span class="n-contents__container__box__span">必須</span>
+              <div>
+                <%= f.time_field :start_time, class: "n-contents__container__box__value" %>
+              </div>
+
+              <%= f.label :end_time, "終了時刻", {class: "n-contents__container__box__label"} %><span class="n-contents__container__box__span">必須</span>
+              <div>
+                <%= f.time_field :end_time, class: "n-contents__container__box__value" %>
+              </div>
+
+              <%= f.label :explanation, "説明", {class: "n-contents__container__box__label"} %><span class="n-contents__container__box__span">必須</span>
+              <div>
+              <%= f.text_area :explanation, class: "n-contents__container__box__value n-contents__container__box__value__explanation", rows: "5", placeholder:"開催するテニスの内容を入力してください（必須 1,000文字以内)", maxlength: "1000" %>
+              </div>
+      <div class = "n-contents__container__heading">
+        <h3>募集条件</h3>
+      </div> 
+              <%= f.label :cost, "費用", {class: "n-contents__container__box__label"} %><span class="n-contents__container__box__span">必須</span>
+              <div class = "n-contents__container__box__value n-contents__container__box__value__cost"> 
+                <%= f.select :cost, [["なし",""],["500円",500],["1,000円",1000],["2,000円",2000],["3,000円",3000],["4,000円",4000],["5,000円",5000],["10,000円",10000]] %>
+              </div>
+
+              <%= f.label :recruit, "募集人数", {class: "n-contents__container__box__label"} %><span class="n-contents__container__box__span">必須</span>
+              <div class = "n-contents__container__box__value n-contents__container__box__value__recruit"> 
+                <%= f.select :recruit, [["1人",1],["2人",2],["3人",3],["4人",5],["5人",5],["6人",6],["7人",7],["8人",8],["9人",9],["10人",10],["11人",11],["12人",12],["13人",13],["14人",14],["15人",15]] %>
+              </div>
+
+              <%= f.label :ave_low, "平均点 最小値", {class: "n-contents__container__box__label"} %><span class="n-contents__container__box__span">必須</span>
+              <div class = "n-contents__container__box__value n-contents__container__box__value__ave_low"> 
+                <%= f.select :ave_low, [["指定なし",""],["1以上",1],["2以上", 2],["3以上",3],["4以上",4],["5以上",5]] %>
+              </div>
+
+              <%= f.label :ave_high, "平均点 最大値", {class: "n-contents__container__box__label"} %><span class="n-contents__container__box__span">必須</span>
+              <div class = "n-contents__container__box__value n-contents__container__box__value__ave_high"> 
+                <%= f.select :ave_high, [["指定なし",""],["6以下",6],["7以下",7],["8以下",8],["9以下",9],["10以下",10]] %>
+              </div>
+
+              <%= f.label :com_low, "コミュニケーション能力 最小値", {class: "n-contents__container__box__label"} %><span class="n-contents__container__box__span">必須</span>
+              <div class = "n-contents__container__box__value n-contents__container__box__value__com_low"> 
+                <%= f.select :com_low, [["指定なし",""],["1以上",1],["2以上", 2],["3以上",3],["4以上",4],["5以上",5]] %>
+              </div>
+
+              <%= f.label :com_high, "コミュニケーション能力 最大値", {class: "n-contents__container__box__label"} %><span class="n-contents__container__box__span">必須</span>
+              <div class = "n-contents__container__box__value n-contents__container__box__value__com_high"> 
+                <%= f.select :com_high, [["指定なし",""],["6以下",6],["7以下",7],["8以下",8],["9以下",9],["10以下",10]] %>
+              </div>
+
+              <%= f.label :age, "年齢制限", {class: "n-contents__container__box__label"} %><span class="n-contents__container__box__span">必須</span>
+              <div class = "n-contents__container__box__value n-contents__container__box__value__age"> 
+                <%= f.select :age, [["指定なし",""],["10代限定",10],["20代限定",20],["30代限定",30],["40代限定",40],["50代限定",50]] %>
+              </div>
+
+              <%= f.label :sex, "性別制限", {class: "n-contents__container__box__label"} %><span class="n-contents__container__box__span">必須</span>
+              <div class = "n-contents__container__box__value n-contents__container__box__value__sex"> 
+                <%= f.select :sex, [["指定なし",""],["男性限定","男性"],["女性限定","女性"]] %>
+              </div>
+
+              <%= f.label :dominant, "利き腕制限", {class: "n-contents__container__box__label"} %><span class="n-contents__container__box__span">必須</span>
+              <div class = "n-contents__container__box__value n-contents__container__box__value__dominant"> 
+                <%= f.select :dominant, [["指定なし",""],["右利き限定","右利き"],["左利き限定","左利き"]] %>
+              </div>
+
+              <%= f.label :image, "イメージ画像", {class: "n-contents__container__box__label"} %><span class="n-contents__container__box__span">必須</span>
+              <div class = "n-contents__container__box__value n-contents__container__box__value__image">
+                <%= f.select :image, [["テニスの練習","https://d1f5hsy4d47upe.cloudfront.net/a0/a048ed7dabbbe4ed073e882f542f70fc_w.jpg"],["クレーコート","https://d1f5hsy4d47upe.cloudfront.net/f5/f5c61a9bfc8f5e4ae05b11e3fadd906d_w.jpg"],["テニスの試合","https://d1f5hsy4d47upe.cloudfront.net/b2/b2515848e899f0af65d6216a9eee6850_w.jpg"]] %>
+              </div>
+              
+              <%= f.hidden_field :user_id, value: current_user.id %>
+              
+              <%= f.submit "送信", {class: "n-contents__container__box__send"} %>
+          <% end %>
+    </div>
+  </div>  
+</div>

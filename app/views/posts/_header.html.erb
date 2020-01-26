@@ -1,7 +1,5 @@
 <div class = "header clearfix">
   <img class = "header__image" src="https://illustimage.com/photo/dl/463.png?20160705" height="50px" width="50px" alt="image">
-  <%# <img class = "header__image" src="https://illustimage.com/photo/dl/463.png?20160705" height="50px" width="50px" alt="image">
-  <img class = "header__image" src="https://illustimage.com/photo/dl/463.png?20160705" height="50px" width="50px" alt="image"> %>
   <div class = "header__sentence">
     <% if user_signed_in? %>  
       <span>ようこそ、<%= current_user.nickname %>さん♪ </span>
@@ -14,12 +12,11 @@
     <% end %>
   </div>
   <ul class = "header__inner">
-    <%# <img class = "header__inner__image" src="https://illustimage.com/photo/dl/463.png?20160705" height="50px" width="50px" alt="image"> %>
     <li><%= link_to 'TOPページ', "/", method: :get %></li>
     <% if user_signed_in? %>
       <li><%= link_to 'サインアウト', "/users/sign_out", method: :delete %></li>
-      <li><%= link_to 'マイページ', "", method: :get %></li>
-      <li><%= link_to '開催する', "/posts/new", method: :get %></li>
+      <li><%= link_to 'マイページ', "/users/show", method: :get %></li>
+      <li><%= link_to 'イベント作成', "/posts/new", method: :get %></li>
     <% else %>
       <li><%= link_to 'ログイン', "/users/sign_in", method: :get %></li>
       <li><%= link_to '新規会員登録', "/users/sign_up", method: :get %></li>

@@ -31,49 +31,4 @@
       <% end %>
     </div>
   </div>
-  <%= pie_chart @data %>
-  <h1><%= current_user.nickname %>さんのスキルセット</h1>
-  <canvas id="myRaderChart"></canvas>
-  <%# <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script> %>
-  <script>
-    var ctx = document.getElementById("myRaderChart");
-    var c_u_serve = gon.current_user_serve;
-    var myRadarChart = new Chart(ctx, {
-        type: 'radar', 
-        data: { 
-            labels: ["サービス", "リターン", "ストローク", "フットワーク", "メンタル","コミュ力"],
-            datasets: [{
-                label: gon.current_user_nickname,
-                data: [ gon.current_user_serve,
-                        gon.current_user_return,
-                        gon.current_user_stroke,
-                        gon.current_user_footwork,
-                        gon.current_user_mental,
-                        gon.current_user_communication
-                        ],
-                backgroundColor: 'RGBA(225,95,150, 0.5)',
-                borderColor: 'RGBA(225,95,150, 1)',
-                borderWidth: 1,
-                pointBackgroundColor: 'RGB(46,106,177)'
-            }]
-        },
-        options: {
-            title: {
-                // display: true,
-                // text: '試験成績'
-            },
-            scale:{
-                ticks:{
-                    suggestedMin: 0,
-                    suggestedMax: 10,
-                    stepSize: 1,
-                    callback: function(value, index, values){
-                        return  value 
-                    }
-                }
-            }
-        }
-    });
-    </script>
-
 </div>

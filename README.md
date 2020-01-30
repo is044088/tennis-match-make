@@ -4,8 +4,8 @@ tennis-match-make  (http://52.196.64.203/)
  
 # サンプル画像
 
-![イベント詳細ページ](https://gyazo.com/e4d6a4f70f70c9a4d37c1b8cc3f0c4a2)
-![個人のスキルセット照会](https://gyazo.com/7e52224b4a226dde60a6783385fde0b3)
+![スクリーンショット 2020-01-30 19 40 15](https://user-images.githubusercontent.com/52908553/73450653-2e16c680-43a9-11ea-8570-c67595964b97.png)
+![スクリーンショット 2020-01-30 19 42 37](https://user-images.githubusercontent.com/52908553/73450690-44248700-43a9-11ea-80fa-00f8e1704044.png)
 
 # 特徴
  テニスのマッチングサイトを作成しました。テニスがしたいけど、近くに仲間やコートがない方や

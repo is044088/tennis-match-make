@@ -2,7 +2,7 @@
             <div class="new-tennis__container__contents clearfix">
               <div class="new-tennis__container__contents__box">              
                 <div class="new-tennis__container__contents__picture"> 
-                  <%= image_tag post.image, width:"120", height:"120", alt:"image", class: "new-tennis__container__contents__picture__image"%>
+                  <%= image_tag "#{post.image}", width:"120", height:"120", alt:"image", class: "new-tennis__container__contents__picture__image"%>
                   <% if user_signed_in? && current_user.id == post.user_id %>
                     <div class = "new-tennis__container__contents__button">
                       <span class = "new-tennis__container__contents__button__delete">

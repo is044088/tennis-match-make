@@ -94,13 +94,14 @@
                 <%= f.select :dominant, [["指定なし",""],["右利き限定","右利き"],["左利き限定","左利き"]] %>
               </div>
 
-              <%= f.label :image, "イメージ画像", {class: "n-contents__container__box__label"} %><span class="n-contents__container__box__span">必須</span>
-              <div class = "n-contents__container__box__value n-contents__container__box__value__image">
-                <%= f.select :image, [["テニスの練習","https://d1f5hsy4d47upe.cloudfront.net/a0/a048ed7dabbbe4ed073e882f542f70fc_w.jpg"],["クレーコート","https://d1f5hsy4d47upe.cloudfront.net/f5/f5c61a9bfc8f5e4ae05b11e3fadd906d_w.jpg"],["テニスの試合","https://d1f5hsy4d47upe.cloudfront.net/b2/b2515848e899f0af65d6216a9eee6850_w.jpg"]] %>
+              <div class = "n-contents__container__box__value__image">
+                <%= f.label :image, for: "file-input", class: "n-contents__container__box__label" do %>
+                  <span class="n-contents__container__box__span">必須</span>
+                  <%= f.file_field :image, id: "file-input" %>              
+                <% end %>
               </div>
-              
               <%= f.hidden_field :user_id, value: current_user.id %>
-              
+              <br>
               <%= f.submit "送信", {class: "n-contents__container__box__send"} %>
           <% end %>
     </div>

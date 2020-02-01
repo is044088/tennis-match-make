@@ -12,7 +12,7 @@
       <p class = "s-content__main__title"><span> <%= @post.title %> </span></p>
       <div class = "s-content__main__pic-jouken">
         <div class = "s-content__main__pic-jouken__picture">
-          <%= image_tag @post.image, width:"300", height:"300", alt:"image", class: "s-content__main__picture__image"%>
+          <%= image_tag "#{@post.image}", width:"300", height:"300", alt:"image", class: "s-content__main__picture__image"%>
         </div>
         <div class = "s-content__main__pic-jouken__contents">
           <p class = "s-content__main__pic-jouken__contents__title">★参加条件★</p>

@@ -75,6 +75,8 @@ gem 'acts-as-taggable-on'
 gem "chartkick"
 gem 'chartable'
 gem 'gon'
+gem 'carrierwave'
+gem 'mini_magick'
 
 group :production do
   gem 'unicorn', '5.4.1'

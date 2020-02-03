@@ -61,22 +61,22 @@
 
               <%= f.label :ave_low, "平均点 最小値", {class: "n-contents__container__box__label"} %><span class="n-contents__container__box__span">必須</span>
               <div class = "n-contents__container__box__value n-contents__container__box__value__ave_low"> 
-                <%= f.select :ave_low, [["指定なし",""],["1以上",1],["2以上", 2],["3以上",3],["4以上",4],["5以上",5]] %>
+                <%= f.select :ave_low, [["指定なし",1],["1以上",1],["2以上", 2],["3以上",3],["4以上",4],["5以上",5]] %>
               </div>
 
               <%= f.label :ave_high, "平均点 最大値", {class: "n-contents__container__box__label"} %><span class="n-contents__container__box__span">必須</span>
               <div class = "n-contents__container__box__value n-contents__container__box__value__ave_high"> 
-                <%= f.select :ave_high, [["指定なし",""],["6以下",6],["7以下",7],["8以下",8],["9以下",9],["10以下",10]] %>
+                <%= f.select :ave_high, [["指定なし",10],["6以下",6],["7以下",7],["8以下",8],["9以下",9],["10以下",10]] %>
               </div>
 
               <%= f.label :com_low, "コミュニケーション能力 最小値", {class: "n-contents__container__box__label"} %><span class="n-contents__container__box__span">必須</span>
               <div class = "n-contents__container__box__value n-contents__container__box__value__com_low"> 
-                <%= f.select :com_low, [["指定なし",""],["1以上",1],["2以上", 2],["3以上",3],["4以上",4],["5以上",5]] %>
+                <%= f.select :com_low, [["指定なし",1],["1以上",1],["2以上", 2],["3以上",3],["4以上",4],["5以上",5]] %>
               </div>
 
               <%= f.label :com_high, "コミュニケーション能力 最大値", {class: "n-contents__container__box__label"} %><span class="n-contents__container__box__span">必須</span>
               <div class = "n-contents__container__box__value n-contents__container__box__value__com_high"> 
-                <%= f.select :com_high, [["指定なし",""],["6以下",6],["7以下",7],["8以下",8],["9以下",9],["10以下",10]] %>
+                <%= f.select :com_high, [["指定なし",10],["6以下",6],["7以下",7],["8以下",8],["9以下",9],["10以下",10]] %>
               </div>
 
               <%= f.label :age, "年齢制限", {class: "n-contents__container__box__label"} %><span class="n-contents__container__box__span">必須</span>

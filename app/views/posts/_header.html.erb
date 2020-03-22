@@ -8,11 +8,12 @@
       <span>コミュ力【<%= @ability.communication%>点】</span>
 
     <% else %>
-      <span>ようこそ、ゲストさん♪　会員登録してぜひサービスをご利用ください♪</span>
+      <span>ようこそ、ゲストさん♪ 会員登録してぜひサービスをご利用ください♪</span>
     <% end %>
   </div>
   <ul class = "header__inner">
-    <li><%= link_to 'TOPページ', "/", method: :get %></li>
+    <li><%= link_to 'TOP', "/", method: :get %></li>
+    <li><%= link_to '開発者サイト', "/posts/mypost", method: :get %></li>
     <% if user_signed_in? %>
       <li><%= link_to 'サインアウト', "/users/sign_out", method: :delete %></li>
       <li><%= link_to 'マイページ', "/users/show", method: :get %></li>

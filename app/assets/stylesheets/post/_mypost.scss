@@ -1,0 +1,217 @@
+// *{
+//   box-sizing: border-box;
+//   text-decoration: none;
+  
+// }
+
+.clearfix:after{
+  content: "";
+  clear: both;
+  display: block;
+}
+
+.portfolio { 
+  width:100%; 
+  height:100vh;
+  background-image:url("https://www.pakutaso.com/shared/img/thumb/gori0I9A3105072103338_TP_V.jpg");
+  text-align: center;
+}
+
+.portfolio__title{
+  color: white;
+  font-size:88px;
+  padding-top: 100px;
+}
+
+.portfolio__desc {
+  color: white;
+  width: 860px;
+  margin: 20px auto 20px;
+}
+
+.portfolio__name{
+  color: white;
+  font-size:60px;
+}
+
+
+.portfolio__intro{
+  padding: 10px;
+}
+
+.portfolio__intro__self{
+  display: inline-block;
+  padding: 0.5em 1em;
+  background: #668ad8;/*ボタン色*/
+  color: #FFF;
+  border-bottom: solid 4px #627295;
+  border-radius: 3px;
+}
+.portfolio__intro__self:active {
+  /*ボタンを押したとき*/
+  -webkit-transform: translateY(4px);
+  transform: translateY(4px);/*下に動く*/
+  border-bottom: none;/*線を消す*/
+}
+
+.profile { 
+  width:100%; 
+  height:100vh;
+  background-color:  #f5f5f5;
+}
+
+.profile__title{
+  padding-top: 50px;
+  text-align: center;
+  font-size: 3rem;
+  color: #343a40!important;
+  font-family: "Source Sans Pro";
+}
+
+.profile__block{
+  width: 70%;
+  margin:0 auto 20px;
+  background-color: #f5f5f5;
+  padding: 0 60px 20px 60px;
+
+}
+
+
+.profile__block__img{
+  text-align: center;
+  float: left;
+  margin-left: 10px;
+}
+.profile__block__img__icon{
+  border-radius: 50px;
+}
+
+.profile__block__table {
+  border: 1px solid blanchedalmond; 
+  float: right;
+  width: 500px;
+  font-size: 20px;
+  font-family: serif;
+}
+
+.profile__block__table__key {
+  width: 30%;
+  text-align: left;
+  font-weight: 400;
+  background: blanchedalmond;
+  padding: 8px;
+}
+.item__inner__table__value{
+  width: 70%;
+  padding: 8px; 
+}
+
+.works { 
+  height:100vh;
+  background-color:  teal;
+  padding-bottom: 20px;
+}
+
+.works__intro{
+  padding: 10px;
+  text-align: center
+}
+
+.works__intro__self{
+  display: inline-block;
+  padding: 0.5em 1em;
+  background: #668ad8;/*ボタン色*/
+  color: #FFF;
+  border-bottom: solid 4px #627295;
+  border-radius: 3px;
+}
+
+.works__intro__self:active {
+  /*ボタンを押したとき*/
+  -webkit-transform: translateY(4px);
+  transform: translateY(4px);/*下に動く*/
+  border-bottom: none;/*線を消す*/
+}
+
+.works__title{
+  padding-top: 50px;
+  text-align: center;
+  font-size: 3rem;
+  color: #343a40!important;
+  font-family: "Source Sans Pro";
+}
+.works__sub{
+  padding-top: 20px;
+  text-align: center;
+  font-size: 2rem;
+  color: #343a40!important;
+  font-family: "Source Sans Pro";
+}
+.works__wrapper {
+  display: flex;
+  width: 860px;
+  margin: 20px auto 20px;
+}
+
+.work-box {
+  background-color: rgba(100, 100, 100, 0.3);
+  border: 1px solid #333;
+  margin-left: 10px;
+}
+
+.work-image {
+  display: block;
+  width: 100%;
+
+}
+
+.work-description {
+  margin: 5px 5px;
+  font-size: 12px;
+  height:70px;
+}
+
+.work-description .button {
+  width: 60%;
+  margin-top: 20px;
+  padding: 3px;
+  
+}
+
+.button-ghost {
+  border: 2px solid #fff;
+  background-color: red;
+}
+.contact__title{
+  padding-top: 50px;
+  text-align: center;
+  font-size: 3rem;
+  color: #343a40!important;
+  font-family: "Source Sans Pro";
+}
+
+.contact{
+  height:100vh;
+}
+
+.contact__sub{
+  padding-top: 20px;
+  text-align: center;
+  font-size: 2rem;
+  color: #343a40!important;
+  font-family: "Source Sans Pro";
+}
+.contact__desc {
+  width: 170px;
+  margin: 20px auto 20px;
+}
+.fab{
+  font-size: 60px;
+  margin: 0 10px;
+}
+.github{
+  color: black;
+}
+.twitter{
+  color: #1DA1F2;
+}

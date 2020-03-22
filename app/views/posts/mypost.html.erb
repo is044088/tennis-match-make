@@ -1,0 +1,111 @@
+    <header class="portfolio">
+      <h1 class="portfolio__title">PortFolio</h1>
+      <h3 class="portfolio__name">〜KOKI YUTO WEB ENGINEER〜</h3>
+      <div class="portfolio__desc">
+        <p class="portfolio__desc__sentence">
+            ここはWebエンジニア湯藤のポートフォリオサイトです。
+            これまでに手がけた制作物、身につけたスキルをまとめています。
+            あなたに、私のことをもっと深く知ってほしいと思って作りました。
+            どうぞお茶でも飲みながらごゆるりとサイト内を散策してください。
+        </p>
+      </div>  
+      <div class="portfolio__intro"> 
+        <a href="#" class="portfolio__intro__self">
+          PROFILE
+        </a>
+      </div>
+    </header>
+
+    <section class="profile" id="about">
+      <div class = "profile__block clearfix">
+        <h2 class="profile__title">PROFILE</h2>
+          <div class = "profile__block__img">
+            <%= image_tag "profile.jpg",size: "250x250", alt: "profile-icon", class: "profile__block__img__icon"%>
+          </div >    
+          <div class = "profile__block__table">
+            <table>
+              <tr>
+                <th class = "profile__block__table__key">名前</th>
+                <td class = "profile__block__table__value">湯藤公貴(Koki Yuto)</td>  
+              </tr>
+              <tr>  
+                <th class = "profile__block__table__key">出身</th>
+                <td class = "profile__block__table__value">岐阜県</td>
+              </tr> 
+              <tr> 
+                <th class = "profile__block__table__key">学歴</th>
+                <td class = "profile__block__table__value">立命館大学　情報理工学部<br>(2013年3月卒)</td>
+              </tr>  
+              <tr>
+                <th class = "profile__block__table__key">職歴</th>
+                <td class = "profile__block__table__value">
+                  某大手食品会社の情報システム子会社に勤務。会計システムの保守・運用担当として、７年間従事。<br>システム開発の要件定義から開発、保守運用まで経験があり、システム開発における全プロセスに携わっている経験が強み。
+                </td>
+              </tr>
+              <tr>
+                <th class = "profile__block__table__key">趣味</th>
+                <td class = "profile__block__table__value">テニス　岐阜県立高校テニス　ベスト4入賞(２回)</td>
+              </tr>
+            </table>  
+          </div>
+      </div>
+      <div class="works__intro clearfix"> 
+          <a href="#" class="works__intro__self">
+            Products
+          </a>
+        </div>
+    </section>
+
+    <section class="works">
+      <h2 class="works__title">Products</h2>
+      <h3 class="works__sub">過去作成したwebアプリケーションの一覧です。<br>各アプリケーションの詳細は画像をクリックしてください。</h3>
+      <div class = "works__wrapper">
+        <a href="#" >
+          <div class="work-box">
+              <%= image_tag "chatspace_top.png",size: "200x200", alt: "制作事例", class: "work-image"%>
+              <div class="work-description">
+                アプリ名：Chatspace<br>
+                グループチャットを行うwebアプリケーションです。
+                簡易版LINEのようなイメージで作成しました。<br>
+              </div>
+          </div>
+        </a>
+        <a href="http://18.176.196.160/" >  
+          <div class="work-box">
+              <%= image_tag "mercari_top.png",size: "200x200", alt: "制作事例", class: "work-image"%>
+              <div class="work-description">
+                  アプリ名：メルカリ(クローンサイト)<br>
+                  フリマサイト、メルカリのクローンサイトです。<br>
+              </div>
+          </div>
+        </a>  
+        <a href="http://52.196.64.203/" >
+          <div class="work-box">
+              <%= image_tag "tennismatchmake.png",size: "200x200", alt: "制作事例", class: "work-image"%>
+              <div class="work-description">
+                アプリ名：テニスマッチメイク<br>
+                テニスのマッチングサイトです。
+                マッチング条件を細かく設定できるため、
+                趣味嗜好にあったイベント作成・参加が可能です。
+              </div>
+          </div>
+        </a>  
+      </div>  
+      <div class="works__intro"> 
+          <a href="#" class="works__intro__self">
+            CONTACT
+          </a>
+        </div>
+    </section>
+    <section class="contact" id="contact">
+      <h2 class="contact__title">Contact</h2>
+      <h3 class="contact__sub">湯藤へのコンタクトはTwitterよりお願いいたします。<br>企業採用担当者や制作の依頼などのご連絡をお待ちしております。</h3>
+      <div class="contact__desc">
+        <a href="https://twitter.com/kokiyuto0709" class= "twitter">
+          <i class="fab fa-twitter-square"></i>
+        </a>
+        <a href="https://github.com/is044088" class= "github" >
+          <i class="fab fa-github-square"></i>
+        </a>  
+      </div>
+    </section>
